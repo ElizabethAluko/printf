@@ -10,10 +10,10 @@ int(*_select_format(char c))(args_list)
 {
 	int e;
 	find funk[] = {
-		{'c', print_char},
-		{'s', print_str},
-		{'i', print_int},
-		{'d', print_int},
+		{'c', _print_char},
+		{'s', _print_str},
+		{'i', _print_int},
+		{'d', _print_int},
 		{NULL, NULL}
 	};
 	for (int e = 0; funk[e].c != NULL; e++)
