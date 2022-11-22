@@ -8,15 +8,15 @@
 
 int(*_select_format(char c))(args_list)
 {
-	int e = 0;
+	int e;
 	find funk[] = {
 		{'c', print_char},
-		{'s', print_string},
-		{'i', print_integer},
-		{'d', print_integer},
+		{'s', print_str},
+		{'i', print_int},
+		{'d', print_int},
 		{NULL, NULL}
 	};
-	for (; funk[e].c != NULL; e++)
+	for (int e = 0; funk[e].c != NULL; e++)
 	{
 		if (*funk[e].c == s)
 			return (funk[e].f);
