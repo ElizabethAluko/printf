@@ -1,12 +1,12 @@
 #include "main.h"
 /**
   * _select_format - selects the right functions for the format specifier
-  * @c: the array to be checked
+  * @s: the array to be checked
   *
   *Return: return a function or NULL
   */
 
-int (*_select_format(char s))(va_list) 
+int (*_select_format(char s))(va_list)
 {
 	find funk[] = {
 		{"c", _print_char},

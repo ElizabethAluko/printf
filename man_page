@@ -30,7 +30,7 @@ Each conversion specification is introduced by the character %, and ends with th
 conversion specifier.
 .SS The conversion specifiers:
 .br
-A character that specifies the type of conversion to be applied. The conversion 
+A character that specifies the type of conversion to be applied. The conversion
 specifier and their meanings are:
 .br
 d, i - The int argument is converted to signed decimal notation.
