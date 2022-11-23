@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, num_printed = 0, (*frmt)(va_list);
+	int i = 0, count = 0, (*frmt)(va_list);
 
 	va_start(args, format);
 
@@ -22,21 +22,21 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			num_printed++;
+			count++;
 		}
 		else
 		{
 			if (format[i + 1] == '%')
 			{
 			_putchar(format[i + 1]);
-			num_printed++;
+			count++;
 			}
 			else
 			{
 			frmt = _select_format(format[i + 1]);
 			if (frmt != NULL)
 			{
-				num_printed += frmt(args);
+				count += frmt(args);
 				i++;
 			}
 			}
@@ -45,5 +45,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 
-	return (num_printed);
+	return (count);
 }
