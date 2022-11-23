@@ -6,20 +6,22 @@
   *Return: return a function or NULL
   */
 
-int(*_select_format(char c))(args_list)
+int (*_select_format(char s))(va_list) 
 {
-	int e;
 	find funk[] = {
-		{'c', _print_char},
-		{'s', _print_str},
-		{'i', _print_int},
-		{'d', _print_int},
+		{"c", _print_char},
+		{"s", _print_str},
+		{"d", _print_int},
+		{"i", _print_int},
 		{NULL, NULL}
 	};
-	for (int e = 0; funk[e].c != NULL; e++)
+
+	int i;
+
+	for (i = 0; funk[i].c != NULL; i++)
 	{
-		if (*funk[e].c == s)
-			return (funk[e].f);
+		if (*funk[i].c == s)
+			return (funk[i].f);
 	}
 	return (NULL);
 }
